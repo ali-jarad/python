@@ -122,7 +122,20 @@ def main():
             break
         else:
             print("Invalid option. Try again.")
+habits = ["Exercise", "Read", "Study"]
 
+print("Your habits:")
+for i in range(len(habits)):
+    print(i + 1, "-", habits[i])
+
+choice = int(input("Choose habit number: "))
+status = input("Done today? (yes/no): ")
+
+file = open("progress.txt", "a")
+file.write(habits[choice - 1] + " : " + status + "\n")
+file.close()
+
+print("Progress saved!")
 if __name__ == "__main__":
     main()
 
